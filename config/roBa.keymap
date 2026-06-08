@@ -33,7 +33,7 @@
         };
 
         muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
+            bindings = <&to_layer_0 LANG2>;
             key-positions = <11 10>;
         };
 
@@ -147,7 +147,7 @@
 &kp Q             &kp W         &kp E         &kp R      &kp T                                                       &kp Y        &kp U  &lt 5 I    &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F      &kp G        &kp LS(LG(S))               &kp DOUBLE_QUOTES  &kp H        &kp J  &kp K      &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V      &kp B        &lt 6 TAB                   &kp SEMICOLON      &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE      &lt 1 ENTER                             &kp DEL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 LANG1  &lt 2 SPACE  &lt_to_layer_0 3 LANG2      &kp BACKSPACE      &lt 1 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -156,7 +156,7 @@
         SYMBOLS {
             bindings = <
 &trans     &kp AMPERSAND  &kp ASTRK    &kp QUESTION  &trans                      &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans             &trans
-&kp TILDE  &kp DOLLAR     &kp PERCENT  &kp CARET     &trans  &trans      &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LS(BACKSLASH)  &trans
+&kp TILDE  &kp DOLLAR     &kp PERCENT  &kp CARET     &trans  &trans      &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH      &trans
 &kp UNDER  &kp EXCL       &kp AT       &kp HASH      &trans  &trans      &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE           &trans
 &trans     &trans         &trans       &trans        &trans  &trans      &trans  &trans                                                                  &trans
             >;
@@ -165,7 +165,7 @@
         NUM {
             bindings = <
 &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                   &trans  &kp F7  &kp F8  &kp F9  &kp F12
-&trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &trans               &mul_mark  &trans  &kp F4  &kp F5  &kp F6  &kp F11
+&kp KP_NUM       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &trans               &mul_mark  &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL  &kp KP_MULTIPLY      &div_mark  &trans  &kp F1  &kp F2  &kp F3  &kp F10
 &trans           &trans           &trans           &trans           &trans     &trans               &trans     &trans                          &trans
             >;
