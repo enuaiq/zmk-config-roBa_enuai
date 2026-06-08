@@ -111,9 +111,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_5>,
-                <&macro_release &kp LALT>;
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_5>,
+                <&macro_release>,
+                <&kp LALT>;
+
             label = "MUL_MARK";
         };
 
@@ -121,9 +125,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_7>,
-                <&macro_release &kp LALT>;
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_7>,
+                <&macro_release>,
+                <&kp LALT>;
+
             label = "DIV_MARK";
         };
     };
@@ -144,10 +152,10 @@
 
         DEFAULT {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R      &kp T                                                       &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F      &kp G        &kp LS(LG(S))               &kp DOUBLE_QUOTES  &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V      &kp B        &lt 6 TAB                   &kp SEMICOLON      &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 LANG1  &lt 2 SPACE  &lt_to_layer_0 3 LANG2      &kp BACKSPACE      &lt 1 ENTER                             &kp DEL
+&kp Q      &kp W         &kp E         &kp R                 &kp T                                                       &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A      &kp S         &kp D         &kp F                 &kp G        &kp LS(LG(S))               &kp DOUBLE_QUOTES  &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&kp Z      &kp X         &kp C         &kp V                 &kp B        &lt 6 TAB                   &kp SEMICOLON      &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANG1  &lt 2 SPACE  &lt_to_layer_0 3 LANG2      &kp BACKSPACE      &lt 1 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -155,10 +163,10 @@
 
         SYMBOLS {
             bindings = <
-&trans     &kp AMPERSAND  &kp ASTRK    &kp QUESTION  &trans                      &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans             &trans
-&kp TILDE  &kp DOLLAR     &kp PERCENT  &kp CARET     &trans  &trans      &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH      &trans
-&kp UNDER  &kp EXCL       &kp AT       &kp HASH      &trans  &trans      &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE           &trans
-&trans     &trans         &trans       &trans        &trans  &trans      &trans  &trans                                                                  &trans
+&trans     &kp AMPERSAND  &kp ASTRK    &kp QUESTION  &trans                      &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans
+&kp TILDE  &kp DOLLAR     &kp PERCENT  &kp CARET     &trans  &trans      &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
+&kp UNDER  &kp EXCL       &kp AT       &kp HASH      &trans  &trans      &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
+&trans     &trans         &trans       &trans        &trans  &trans      &trans  &trans                                                              &trans
             >;
         };
 
@@ -173,10 +181,10 @@
 
         ARROW {
             bindings = <
-&kp PG_UP  &trans          &kp UP_ARROW    &trans           &kp PG_DN                                        &trans         &trans  &kp LG(UP_ARROW)    &trans               &trans
-&kp HOME   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END    &trans                    &kp LG(PSCRN)  &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)   &kp LG(RIGHT_ARROW)  &trans
-&trans     &trans          &trans          &trans           &trans     &trans                    &kp LS(PSCRN)  &trans  &trans              &trans               &trans               &trans
-&trans     &trans          &trans          &trans           &trans     &trans                    &kp BSPC       &trans                                                                &trans
+&kp PG_UP  &trans          &kp UP_ARROW    &trans           &kp PG_DN                             &trans  &trans              &kp LG(UP_ARROW)    &trans               &trans
+&kp HOME   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END    &trans      &kp LG(PSCRN)  &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans
+&trans     &trans          &trans          &trans           &trans     &trans      &kp LS(PSCRN)  &trans  &trans              &trans              &trans               &trans
+&trans     &trans          &trans          &trans           &trans     &trans      &kp BSPC       &trans                                                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp TAB LS(TAB)>;
