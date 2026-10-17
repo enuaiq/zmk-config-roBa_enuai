@@ -1,7 +1,20 @@
 #include "roBa.dtsi"
+#include <zmk-input-vector-acceleration/input_processor_vector_accel.dtsi>
 
 &default_transform {
     col-offset = <6>;
+};
+
+// ポインタ加速の曲線。速度の単位はセンサーのカウント/秒 (CPI 600 なら 1000 カウント/秒 ≒ 指速 42mm/秒)。
+//   - unity-speed 以下 : 倍率 1.0 (min-factor=1000 なので低速側は減速しない。CPI 600 そのまま)
+//   - unity-speed〜max-speed : 二次曲線で 1.0 → max-factor
+//       例) 1600 c/s ≒ 1.08倍, 2400 ≒ 1.3倍, 3200 ≒ 1.7倍, 4000 以上 = 2.2倍
+// 加速を切りたいときは max-factor = <1000> にする
+&vector_accel {
+    min-factor = <1000>;
+    max-factor = <2200>;
+    unity-speed = <800>;
+    max-speed = <4000>;
 };
 
 &kscan0 {
@@ -19,6 +32,9 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        // トラックボールの相対移動 (REL_X/REL_Y) にのみ加速を掛ける。
+        // scroll-layers でドライバが出すホイールイベントは素通し
+        input-processors = <&vector_accel>;
     };
 };
 

@@ -1,0 +1,6 @@
+# Serena MCP のプロジェクトキャッシュ
+.serena/
+
+# ローカルビルド成果物
+build/
+*.uf2

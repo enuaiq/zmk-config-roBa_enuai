@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: kumamuk-git
       url-base: https://github.com/kumamuk-git
+    - name: amgskobo
+      url-base: https://github.com/amgskobo
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,11 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: kumamuk-git
       revision: main
+    # トラックボールのポインタ加速 (input processor)。速度に応じた倍率を X/Y に同じ値で掛けるので
+    # 斜め移動の方向が歪まない。ホイール(スクロール)イベントには影響しない。
+    # roBa (hirunefu/zmk-config-roBa) で動作確認されているコミットに固定
+    - name: zmk-input-vector-acceleration
+      remote: amgskobo
+      revision: 3f1bb330e576b31e4cac89524865ee5c00908cbc
   self:
     path: config
